@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap");
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer utilities {
+    /* For Webkit-based browsers (Chrome, Safari and Opera) */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* For IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .checkbox {
+        @apply w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2;
+    }
+
+    .select-group {
+        @apply h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 sm:text-sm focus:ring-0 focus:border-none;
+    }
+}
+
+@layer components {
+    .btn-step {
+        @apply text-sm mx-2 w-32 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-purple-700 hover:text-purple-100 bg-purple-100 text-purple-700 border duration-200 ease-in-out border-purple-600 transition;
+    }
+
+    .btn-gray {
+        @apply w-full cursor-pointer text-white bg-slate-700 hover:bg-gray-600 focus:ring-4 focus:ring-gray-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+
+    .btn-orange {
+        @apply w-full cursor-pointer text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+
+    .sectionSize {
+        @apply lg:px-48 md:px-12 px-4 py-14 flex flex-col items-center;
+    }
+    .secondaryTitle {
+        @apply font-pt-serif text-3xl bg-left-bottom bg-no-repeat pb-8 px-16 mb-8;
+    }
+    .btn-red {
+        @apply w-full cursor-pointer text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto focus:outline-none;
+    }
+
+    .btn-yellow {
+        @apply w-full cursor-pointer text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+
+    .btn-indigo {
+        @apply w-full cursor-pointer text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+
+    .btn-green {
+        @apply w-full cursor-pointer text-white bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-200 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+
+    .btn-primary {
+        @apply w-full cursor-pointer text-white bg-primary hover:bg-opacity-80 focus:ring-2 focus:ring-blue-300 font-medium inline-flex items-center justify-center text-sm px-3 py-2 text-center sm:w-auto;
+    }
+}
+
+.growing-underline {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    overflow: hidden;
+}
+
+.growing-underline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: black;
+    transition:
+        opacity 300ms,
+        transform 300ms;
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.growing-underline:hover::after,
+.growing-underline:focus::after {
+    transform: translate3d(0, 0, 0);
+}
